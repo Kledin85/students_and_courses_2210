@@ -43,4 +43,24 @@ RSpec.describe Course do
     expect(course.students).to eq([student1, student2])
     expect(course.full?).to eq(true)
   end
+
+  it "can put student names" do
+    course = Course.new("calculus", 2)
+    student1 = Student.new({name: "Morgan", age: 21})
+    student2 = Student.new({name: "Jordan", age: 29})
+    course.enroll(student1)
+    course.enroll(student2)
+
+    expect(course.student_names).to eq(["Morgan", "Jordan"])
+  end
+
+  xit "can put student names" do
+    course = Course.new("calculus", 2)
+    student1 = Student.new({name: "Morgan", age: 21})
+    student2 = Student.new({name: "Jordan", age: 29})
+    course.enroll(student1)
+    course.enroll(student2)
+
+    expect(course.student_names).to eq(["Morgan", "Jordan"])
+  end
 end
